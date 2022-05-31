@@ -3,6 +3,8 @@ package com.example.notesapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,5 +12,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menue, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.itemNote:
+                addNewNote();
+                break;
+            case R.id.itemSave:
+                saveNotes();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void addNewNote() {
+
+    }
+
+    private void saveNotes() {
+
     }
 }
